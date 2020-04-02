@@ -178,7 +178,7 @@ svgMap
         exit.call(exit =>
           exit 
             .transition()
-            .duration(750)
+            .duration(500)
             .attr("cx", width)
             .remove()
         )
@@ -187,7 +187,7 @@ svgMap
     selection =>
       selection
         .transition()
-        .duration(750)
+        .duration(500)
         .attr("cy", function(d) {
           return projection([d.long, d.lat])[1];
         }),
@@ -248,7 +248,7 @@ const rect = svgGraph
           exit
             .transition()
             .delay(d => d.players)
-            .duration(750)
+            .duration(500)
             .attr("x", width)
             .remove()
         )
@@ -257,7 +257,7 @@ const rect = svgGraph
       selection =>
         selection
           .transition()
-          .duration(750)
+          .duration(500)
           .attr("x", margin.left)
           .attr("y", d => yScale(d.country))
           .attr("width", d => xScale(d.players) - margin.left)
