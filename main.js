@@ -41,19 +41,19 @@ Promise.all([
 
 function init() {
 
-const selectElement = d3.select("#dropdown").on("change", function() {
+const selectElement = d3.select(".slider").on("change", function() {
   state.selectedYear = this.value;
   draw();
 });
 
-selectElement
-  .selectAll("option")
-  .data([
-    ...Array.from(new Set(state.worldCupData.map(d => d.year))),
-  ])
-  .join("option")
-  .attr("value", d => d)
-  .text(d => d);
+const years = Array.from(new Set(state.worldCupData.map(d => d.year)))
+d3.select(".slider")
+  .attr("min", d3.min(years))
+  .attr("max", d3.max(years))
+  .on("change", function() {
+    state.selectedYear= this.value;
+    draw(); 
+  });
 
 selectElement.property("value", "2018");
 
@@ -124,6 +124,14 @@ tooltip = d3.select("body")
   .attr("height", 100)
   .style("position", "absolute")
   .style("opacity", 0);
+ 
+const slider = document.getElementById("year");
+const output = document.getElementById("value");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}; 
   
 draw();
 }

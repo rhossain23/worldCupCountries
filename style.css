@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: "Source Sans Pro";
     padding: 0.5em 3em;
 }
 
@@ -18,11 +18,25 @@ label {
     top: 10px;
 }
 
-#dropdown {
-    font-size: 14px;
+.slider {
+    -webkit-appearance: none;
+    width: 20%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
     position: -webkit-sticky;
     position: sticky;
     top: 10px;
+  }
+
+.slidervalue {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
 }
 
 .rect:hover{

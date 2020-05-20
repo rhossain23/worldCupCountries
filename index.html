@@ -7,8 +7,13 @@
   <body>
     <h1>All of the Countries Where World Cup Players Play Professionally</h1>
     <h2>By Rafayet Hossain</h2>
-    <label for="dropdown">Select a Year</label>
-    <select id="dropdown" name="dropdown"></select>
+    *Colors between the map and the graph do not correlate.
+    <br>
+    <br>
+    *Hovering over each circle on the map and each bar on the graph displays more information:<br>
+    <br>
+    <input type="range" step="4" class = "slider" id="year">
+    <p class="slidervalue">Year: <span id="value"></span></p>
     <div id="d3-container"></div>
     <div id="d3-container2"></div>
     <br>Every soccer player that played at the World Cup has a "National" team and a "Club" team*. National teams represent a country, while 
